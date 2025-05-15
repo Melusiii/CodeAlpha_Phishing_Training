@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Training</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Phishing Awareness Training</h1>
+        <p>Learn how to recognize and avoid phishing attacks</p>
+    </header>
+    
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    
+    <div class="module" id="intro">
+        <h2>Introduction to Phishing</h2>
+        <p>Welcome to this phishing awareness training module. In this course, you'll learn:</p>
+        <ul>
+            <li>What phishing is and why it's dangerous</li>
+            <li>How to recognize phishing attempts</li>
+            <li>Common phishing techniques to watch for</li>
+            <li>Best practices to protect yourself and your organization</li>
+            <li>What to do if you encounter a phishing attempt</li>
+        </ul>
+        
+        <div class="warning">
+            <h3>Why This Matters</h3>
+            <p>Phishing is responsible for over <strong>90% of successful cyberattacks</strong>. A single click on a malicious link can compromise your personal information, financial accounts, or your entire organization's network.</p>
+        </div>
+        
+        <button class="btn" onclick="nextModule('module1')">Begin Training</button>
+    </div>
+    
+    <div class="module hidden" id="module1">
+        <h2>What is Phishing?</h2>
+        
+        <p>Phishing is a type of cyberattack where criminals attempt to trick you into revealing sensitive information or installing malware by pretending to be a trustworthy entity.</p>
+        
+        <h3>Common Phishing Goals:</h3>
+        <ul>
+            <li>Stealing login credentials (email, banking, social media)</li>
+            <li>Installing malware on your device</li>
+            <li>Tricking you into sending money or sensitive data</li>
+            <li>Gaining access to corporate networks</li>
+        </ul>
+        
+        <div class="danger">
+            <h3>Phishing Statistics</h3>
+            <ul>
+                <li>1 in 99 emails is a phishing attack</li>
+                <li>30% of phishing messages get opened by targeted users</li>
+                <li>The average cost of a phishing attack for a mid-sized company is $1.6 million</li>
+            </ul>
+        </div>
+        
+        <div class="quiz">
+            <h3>Quick Knowledge Check</h3>
+            <p><strong>Question:</strong> Phishing only happens through email - true or false?</p>
+            <button class="btn" onclick="showAnswer('answer1', false)">True</button>
+            <button class="btn" onclick="showAnswer('answer1', true)">False</button>
+            <p id="answer1" class="hidden"></p>
+        </div>
+        
+        <button class="btn" onclick="prevModule('intro')">Previous</button>
+        <button class="btn" onclick="nextModule('module2')">Next</button>
+    </div>
+    
+    <div class="module hidden" id="module2">
+        <h2>Recognizing Phishing Emails</h2>
+        
+        <p>Phishing emails often appear legitimate at first glance. Here's how to spot them:</p>
+        
+        <h3>Common Red Flags:</h3>
+        <ul>
+            <li><strong>Urgent or threatening language:</strong> "Your account will be closed!"</li>
+            <li><strong>Generic greetings:</strong> "Dear Customer" instead of your name</li>
+            <li><strong>Suspicious sender addresses:</strong> "support@amaz0n.com"</li>
+            <li><strong>Poor spelling and grammar:</strong> Professional organizations proofread</li>
+            <li><strong>Unexpected attachments:</strong> Especially .exe, .zip, or .js files</li>
+            <li><strong>Requests for sensitive information:</strong> Legitimate companies won't ask for passwords via email</li>
+        </ul>
+        
+        <div class="email-example">
+            <div class="email-header">
+                From: "Amazon Support" &lt;support@amaz0n-security.com&gt;<br>
+                To: You<br>
+                Subject: Urgent: Your Amazon account has been locked!
+            </div>
+            <p>Dear Valued Customer,</p>
+            <p>We have detected unusual activity on your Amazon account. To prevent unauthorized access, we have temporarily locked your account.</p>
+            <p><strong>Click here to verify your identity and unlock your account:</strong> <a href="#">http://amaz0n-verify.com/account</a></p>
+            <p>If you do not take action within 24 hours, your account will be permanently closed.</p>
+            <p>Sincerely,<br>Amazon Security Team</p>
+        </div>
+        
+        <div class="success">
+            <h3>What's Wrong With This Email?</h3>
+            <ul>
+                <li>Generic greeting ("Dear Customer")</li>
+                <li>Misspelled domain (amaz0n instead of amazon)</li>
+                <li>Creates unnecessary urgency</li>
+                <li>Links to a suspicious website</li>
+                <li>Threatens account closure</li>
+            </ul>
+        </div>
+        
+        <button class="btn" onclick="prevModule('module1')">Previous</button>
+        <button class="btn" onclick="nextModule('module3')">Next</button>
+    </div>
+    
+    <div class="module hidden" id="module3">
+        <h2>Phishing Websites</h2>
+        
+        <p>Phishing websites are fake sites designed to steal your information. They often look identical to legitimate sites.</p>
+        
+        <h3>How to Spot Fake Websites:</h3>
+        <ul>
+            <li><strong>Check the URL carefully:</strong> Look for misspellings (faceb00k.com) or wrong domains (paypal.security.com)</li>
+            <li><strong>Look for HTTPS:</strong> Legitimate sites use HTTPS (but some phishing sites do too)</li>
+            <li><strong>Check for poor design:</strong> Low-quality images, broken links, or formatting issues</li>
+            <li><strong>Verify security certificates:</strong> Click the padlock icon in your browser to view certificate details</li>
+        </ul>
+        
+        <div class="warning">
+            <h3>Hover Before You Click!</h3>
+            <p>Always hover over links to see the actual destination URL before clicking. The displayed text can be completely different from the real link.</p>
+        </div>
+        
+        <div class="quiz">
+            <h3>Quick Knowledge Check</h3>
+            <p><strong>Question:</strong> Which of these URLs looks suspicious?</p>
+            <button class="btn" onclick="showAnswer('answer3a', false)">https://www.paypal.com/login</button>
+            <button class="btn" onclick="showAnswer('answer3a', false)">https://login.microsoftonline.com</button>
+            <button class="btn" onclick="showAnswer('answer3a', true)">https://appleid.apple.com.verify-account.com</button>
+            <p id="answer3a" class="hidden"></p>
+        </div>
+        
+        <button class="btn" onclick="prevModule('module2')">Previous</button>
+        <button class="btn" onclick="nextModule('module4')">Next</button>
+    </div>
+    
+    <div class="module hidden" id="module4">
+        <h2>Social Engineering Tactics</h2>
+        
+        <p>Social engineering is the psychological manipulation of people into performing actions or divulging confidential information.</p>
+        
+        <h3>Common Social Engineering Techniques:</h3>
+        <ul>
+            <li><strong>Pretexting:</strong> Creating a fake scenario to gain your trust</li>
+            <li><strong>Baiting:</strong> Offering something enticing to get you to take action</li>
+            <li><strong>Quid pro quo:</strong> Offering a service or benefit in exchange for information</li>
+            <li><strong>Tailgating:</strong> Following someone into a restricted area</li>
+            <li><strong>Vishing:</strong> Phishing via phone calls</li>
+            <li><strong>Smishing:</strong> Phishing via SMS/text messages</li>
+        </ul>
+        
+        <div class="example">
+            <p><strong>Example Vishing Call:</strong></p>
+            <p>"Hello, this is John from Microsoft Support. We've detected a virus on your computer. Please go to this website and install the remote support software so we can fix it for you."</p>
+        </div>
+        
+        <div class="danger">
+            <h3>Remember:</h3>
+            <ul>
+                <li>Legitimate companies won't call you out of the blue about tech problems</li>
+                <li>Never give remote access to your computer to unsolicited callers</li>
+                <li>Don't provide personal information to callers you didn't initiate contact with</li>
+            </ul>
+        </div>
+        
+        <button class="btn" onclick="prevModule('module3')">Previous</button>
+        <button class="btn" onclick="nextModule('module5')">Next</button>
+    </div>
+    
+    <div class="module hidden" id="module5">
+        <h2>Protecting Yourself from Phishing</h2>
+        
+        <h3>Best Practices:</h3>
+        <ul>
+            <li><strong>Use multi-factor authentication (MFA):</strong> Even if your password is stolen, MFA can prevent access</li>
+            <li><strong>Keep software updated:</strong> Regular updates patch security vulnerabilities</li>
+            <li><strong>Use a password manager:</strong> Helps create and store strong, unique passwords</li>
+            <li><strong>Verify requests:</strong> Contact the company directly using official contact information</li>
+            <li><strong>Report suspicious messages:</strong> Follow your organization's reporting procedures</li>
+            <li><strong>Educate yourself:</strong> Stay informed about current phishing trends</li>
+        </ul>
+        
+        <div class="success">
+            <h3>What to Do If You Clicked</h3>
+            <ol>
+                <li>Disconnect from the network (turn off Wi-Fi/unplug Ethernet)</li>
+                <li>Run a full antivirus scan</li>
+                <li>Change all affected passwords</li>
+                <li>Enable MFA where available</li>
+                <li>Report the incident to your IT department</li>
+                <li>Monitor accounts for suspicious activity</li>
+            </ol>
+        </div>
+        
+        <div class="quiz">
+            <h3>Final Knowledge Check</h3>
+            <p><strong>Scenario:</strong> You receive an email from your bank asking you to click a link to verify recent suspicious transactions. What should you do?</p>
+            <button class="btn" onclick="showAnswer('answer5a', false)">Click the link and log in to check</button>
+            <button class="btn" onclick="showAnswer('answer5a', false)">Forward the email to coworkers to see if they got it too</button>
+            <button class="btn" onclick="showAnswer('answer5a', true)">Log in directly through the bank's official website or app</button>
+            <p id="answer5a" class="hidden"></p>
+        </div>
+        
+        <button class="btn" onclick="prevModule('module4')">Previous</button>
+        <button class="btn" onclick="nextModule('final')">Complete Training</button>
+    </div>
+    
+    <div class="module hidden" id="final">
+        <h2>Training Complete!</h2>
+        
+        <p>Congratulations on completing this phishing awareness training!</p>
+        
+        <div class="success">
+            <h3>Key Takeaways</h3>
+            <ul>
+                <li>Always verify the sender of emails and websites</li>
+                <li>Never provide sensitive information in response to unsolicited requests</li>
+                <li>When in doubt, contact the organization through official channels</li>
+                <li>Report all suspicious messages to your IT/security team</li>
+                <li>Stay vigilant - phishing tactics constantly evolve</li>
+            </ul>
+        </div>
+        
+        <h3>Additional Resources</h3>
+        <ul>
+            <li><a href="https://www.cisa.gov/stop-phishing" target="_blank">CISA Phishing Guidance</a></li>
+            <li><a href="https://www.ftc.gov/news-events/topics/identity-theft/phishing-scams" target="_blank">FTC Phishing Information</a></li>
+            <li><a href="https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" target="_blank">How to Recognize and Avoid Phishing Scams</a></li>
+        </ul>
+        
+        <div class="quiz">
+            <h3>Training Acknowledgement</h3>
+            <p>By submitting below, you acknowledge that you've completed this training and understand the risks of phishing attacks.</p>
+            <form id="completionForm">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="checkbox" id="acknowledge" name="acknowledge" required>
+                <label for="acknowledge">I confirm I've completed this training</label><br><br>
+                
+                <button type="submit" class="btn">Submit Completion</button>
+            </form>
+            <p id="submitMessage" class="hidden">Thank you for completing the training! A confirmation has been sent to your email.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Phishing Awareness Training &copy; <span id="year"></span> | Melusi Shanzi</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
